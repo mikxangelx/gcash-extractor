@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --bg: #eef1f4;
+  --card-bg: #ffffff;
+  --border: #e2e6ea;
+  --border-strong: #d5dbe1;
+  --text-primary: #1f2933;
+  --text-secondary: #6b7480;
+  --text-muted: #9aa2ac;
+  --accent: #3b6fd6;
+  --accent-hover: #2f5cc0;
+  --btn-disabled-bg: #eceff2;
+  --btn-disabled-text: #b3b9c1;
+  --btn-secondary-bg: #e8eaed;
+  --btn-secondary-text: #33383e;
+  --danger: #c0392b;
+  --shadow: 0 1px 3px rgba(16, 24, 40, 0.05), 0 1px 2px rgba(16, 24, 40, 0.03);
+  --radius-card: 14px;
+  --radius-control: 8px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text-primary);
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 64px 24px 80px;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.page-header h1 {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 8px;
+  letter-spacing: -0.01em;
+}
+
+.page-header p {
+  font-size: 15px;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.panels {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+  max-width: 900px;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  width: 420px;
+  flex: 1 1 380px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-title {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 0 0 16px;
+}
+
+/* Dropzone */
+
+.dropzone {
+  border: 1.5px dashed var(--border-strong);
+  border-radius: var(--radius-control);
+  background: #fafbfc;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+  padding: 24px;
+}
+
+.dropzone.dragover {
+  border-color: var(--accent);
+  background: #f1f5fd;
+}
+
+.dropzone-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.dropzone-icon {
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.dropzone-text {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 4px;
+}
+
+.dropzone-subtext {
+  font-size: 13px;
+  margin: 0 0 10px;
+  color: var(--text-secondary);
+}
+
+.browse-link {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+.dropzone-formats {
+  font-size: 12px;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.preview-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+}
+
+.preview-content img {
+  max-width: 100%;
+  max-height: 220px;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  object-fit: contain;
+}
+
+.change-file-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+/* Buttons */
+
+.btn {
+  width: 100%;
+  margin-top: 16px;
+  padding: 11px 16px;
+  border-radius: var(--radius-control);
+  border: 1px solid transparent;
+  font-family: inherit;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: var(--accent-hover);
+}
+
+.btn-primary:disabled {
+  background: var(--btn-disabled-bg);
+  color: var(--btn-disabled-text);
+  cursor: not-allowed;
+}
+
+.btn-secondary {
+  background: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
+}
+
+.btn-secondary:hover {
+  background: #dfe2e6;
+}
+
+.link-btn {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: 13px;
+  margin-top: 12px;
+  cursor: pointer;
+  text-decoration: underline;
+  padding: 0;
+  align-self: center;
+}
+
+.link-btn:hover {
+  color: var(--text-primary);
+}
+
+.error-text {
+  color: var(--danger);
+  font-size: 12.5px;
+  margin: 10px 2px 0;
+}
+
+/* Results box */
+
+.results-box {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-control);
+  background: #fafbfc;
+  min-height: 260px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.empty-state,
+.processing-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: var(--text-muted);
+  gap: 10px;
+}
+
+.empty-state p,
+.processing-state p {
+  font-size: 13.5px;
+  margin: 0;
+  color: var(--text-secondary);
+}
+
+.spinner {
+  width: 22px;
+  height: 22px;
+  border: 2.5px solid var(--border-strong);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.fields-state {
+  width: 100%;
+  align-self: stretch;
+}
+
+.field-row {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 2px;
+  border-bottom: 1px solid var(--border);
+}
+
+.field-row:last-child {
+  border-bottom: none;
+}
+
+.field-label {
+  font-size: 12px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+}
+
+.field-value {
+  font-size: 14.5px;
+  color: var(--text-primary);
+  font-weight: 500;
+  user-select: all;
+}
+
+.field-value.not-detected {
+  color: var(--text-muted);
+  font-weight: 400;
+  font-style: italic;
+}
+
+.copied-badge {
+  align-self: center;
+  margin-top: 10px;
+  font-size: 13px;
+  color: #1e8e5a;
+  font-weight: 500;
+}
+
+@media (max-width: 900px) {
+  .panels {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .card {
+    width: 100%;
+  }
+}
